@@ -18,7 +18,7 @@ package brut.util;
 
 public class OSDetection {
     private static String OS = System.getProperty("os.name").toLowerCase();
-    private static String Bit = System.getProperty("sun.arch.data.model").toLowerCase();
+    private static String Bit = System.getProperty("os.arch").toLowerCase().contains("64") ? "64" : "32";
 
     public static boolean isWindows() {
         return (OS.contains("win"));
