@@ -37,14 +37,9 @@ public class ApktoolProperties {
     }
 
     private static void loadProps() {
-        InputStream in = ApktoolProperties.class.getResourceAsStream("/properties/apktool.properties");
         sProps = new Properties();
-        try {
-            sProps.load(in);
-            in.close();
-        } catch (IOException ex) {
-            LOGGER.warning("Can't load properties.");
-        }
+        sProps.put("application.version", "androidAPKTool");
+        sProps.put("git.commit.id.abbrev", "master");
 
         InputStream templateStream = null;
         try {
